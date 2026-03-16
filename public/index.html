@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader Pro</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon do YouTube (clássico) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.376-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z' fill='%23FF0000'/></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YouTube Downloader Pro</h1>
+            <p>Baixe seus vídeos favoritos do YouTube em alta qualidade • MP3 • MP4 • Rápido e seguro</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <input 
+                    type="url" 
+                    id="videoUrl" 
+                    placeholder="Cole a URL do YouTube aqui (ex: https://www.youtube.com/watch?v=...)"
+                    required
+                >
+                <button id="analyzeBtn" class="primary-btn">Analisar Vídeo</button>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p id="loadingMessage">Processando...</p>
+            </div>
+
+            <div id="videoInfo" class="video-info hidden">
+                <div class="video-details">
+                    <img id="thumbnail" src="" alt="Thumbnail do vídeo">
+                    <div class="details">
+                        <h2 id="videoTitle"></h2>
+                        <div class="video-meta">
+                            <span>⏱️ <span id="videoDuration"></span></span>
+                            <span>📺 <span id="videoAuthor"></span></span>
+                            <span>👁️ <span id="videoViews"></span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="download-options">
+                    <h3>Opções de Download</h3>
+                    
+                    <div class="option-group">
+                        <h4>
+                            <span>🎵</span>
+                            Áudio MP3
+                        </h4>
+                        <div class="quality-select">
+                            <select id="audioQuality">
+                                <option value="128">128 kbps - Qualidade padrão</option>
+                                <option value="192">192 kbps - Qualidade alta</option>
+                                <option value="320">320 kbps - Qualidade máxima</option>
+                            </select>
+                            <button id="downloadAudioBtn" class="download-btn audio-btn">
+                                <span>⬇️</span> Baixar MP3
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <h4>
+                            <span>🎬</span>
+                            Vídeo MP4
+                        </h4>
+                        <div class="quality-select">
+                            <select id="videoQuality">
+                                <!-- Preenchido via JavaScript -->
+                            </select>
+                            <button id="downloadVideoBtn" class="download-btn video-btn">
+                                <span>⬇️</span> Baixar MP4
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="progress" class="progress hidden">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p id="progressMessage">⏳ Preparando download...</p>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div class="result-content">
+                    <span class="result-icon">✅</span>
+                    <h3>Download concluído!</h3>
+                    <p id="resultMessage"></p>
+                    <a id="downloadLink" href="#" class="download-link" download>Salvar arquivo</a>
+                    <button id="newDownloadBtn" class="secondary-btn">Fazer novo download</button>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <span class="error-icon">⚠️</span>
+                <h3 id="errorTitle">Ops! Algo deu errado</h3>
+                <p id="errorDetails" class="error-details"></p>
+                <div id="errorTips" class="tips-list hidden"></div>
+                <button id="retryBtn" class="secondary-btn">Tentar novamente</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
