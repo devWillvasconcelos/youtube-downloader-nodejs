@@ -69,3 +69,15 @@ Antes de começar, você precisa ter instalado em sua máquina:
 ```bash
 git clone https://github.com/seu-usuario/youtube-downloader.git
 cd youtube-downloader
+
+2. Instale as dependências
+bash
+npm install
+3. Execute o servidor
+bash
+npm start
+4. Acesse a aplicação
+Abra seu navegador e acesse:
+
+text
+http://localhost:3000
