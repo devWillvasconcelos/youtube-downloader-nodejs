@@ -79,5 +79,6 @@ npm start
 4. Acesse a aplicação
 Abra seu navegador e acesse:
 
+5. Instale o ffmepeg
 text
 http://localhost:3000
