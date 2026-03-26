@@ -78,7 +78,6 @@ bash
 npm start
 4. Acesse a aplicação
 Abra seu navegador e acesse:
-
 5. Instale o ffmepeg
-text
+6. Acesse
 http://localhost:3000
